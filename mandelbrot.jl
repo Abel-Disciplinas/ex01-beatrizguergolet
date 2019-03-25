@@ -1,14 +1,8 @@
-# add Images
-# add ImageMagick
-
-using Images
-
-# z^2 = x^2 + 2xyi - y^2 = (x^2 - y^2) + (2xy) i
 function iteracao_mandelbrot(cx, cy; max_iter = 40)
     iter = 0
     x = 0
     y = 0
-    for inter = 0:40
+    for iter = 0:40
         p = x
         q = y
         x = p ^ 2 - q ^ 2 + cx
@@ -17,7 +11,7 @@ function iteracao_mandelbrot(cx, cy; max_iter = 40)
     if x ^ 2 + y ^ 2  <  4
       return false, 0
     else
-      return true, iter / max_iter
+      
       return true, 1
     end
 end
