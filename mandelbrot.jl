@@ -1,8 +1,14 @@
+# add Images
+# add ImageMagick
+
 using Images
-  function interacao_mandelbrot(cx, cy; max_inter = 60)
+
+# z^2 = x^2 + 2xyi - y^2 = (x^2 - y^2) + (2xy) i
+function iteracao_mandelbrot(cx, cy; max_iter = 40)
+    iter = 0
     x = 0
     y = 0
-    for inter = 0:60
+    for inter = 0:40
         p = x
         q = y
         x = p ^ 2 - q ^ 2 + cx
@@ -14,14 +20,8 @@ using Images
       return true, iter / max_iter
       return true, 1
     end
-  end
-
-  if x^2 + y^2 < 4
-    return false, 0
-  else
-    return true, iter / max_iter
-  end
 end
+
 
 function mandelbrot(N)
   x = range(-2.5, 1.5, length=N)
@@ -41,3 +41,4 @@ function mandelbrot(N)
 end
 
 mandelbrot(1000)
+
